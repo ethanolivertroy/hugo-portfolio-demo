@@ -1,4 +1,5 @@
-baseURL = 'https://ethanolivertroy.github.io/'
+# Update this to your Netlify URL after first deploy (e.g., 'https://your-site-name.netlify.app/')
+baseURL = 'https://your-site-name.netlify.app/'
 languageCode = 'en-us'
 title = 'My Portfolio & Blog'
 theme = 'PaperMod'
