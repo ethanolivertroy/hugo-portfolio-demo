@@ -1,0 +1,508 @@
+baseURL: "https://your-site-name.netlify.app/"
+languageCode: "en-us"
+title: "Your Name - Cybersecurity Professional"
+theme: hugo-profile
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+enableRobotsTXT: true
+
+# Uncomment to enable Google Analytics and Disqus comments
+#services:
+  #googleAnalytics:
+    #id: G-MEASUREMENT_ID
+  #disqus:
+    #shortname: your-disqus-shortname
+
+pagination:
+  pagerSize: 6
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+Menus:
+  main:
+    - identifier: blog
+      name: Blog
+      title: Blog posts
+      url: /blogs
+      weight: 1
+    - identifier: gallery
+      name: Gallery
+      title: Personal gallery
+      url: /gallery
+      weight: 2
+
+params:
+  title: "Your Name - Cybersecurity Portfolio"
+  description: "Portfolio and blog of a cybersecurity professional specializing in GRC, Security Engineering, and Offensive Security"
+  favicon: "/fav.png"
+
+  useBootstrapCDN: false
+  animate: true
+
+  theme:
+    defaultTheme: "dark" # Popular in security community
+    # disableThemeToggle: false
+
+  font:
+    fontSize: 1rem
+    fontWeight: 400
+    lineHeight: 1.5
+    textAlign: left
+
+  navbar:
+    align: ms-auto
+    brandName: "YourName"
+    disableSearch: false
+    stickyNavBar:
+      enable: true
+      showOnScrollUp: true
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: false
+      disableProjects: false
+      disableAchievements: false
+      disableContact: false
+
+  # Hero Section
+  hero:
+    enable: true
+    intro: "Hi, I'm"
+    title: "Your Name"
+    subtitle: "Cybersecurity Professional"
+    content: "A passionate security professional specializing in GRC, Security Engineering, and Offensive Security. I help organizations build secure systems, manage risk, and protect against evolving threats."
+    image: /images/hero.svg
+    bottomImage:
+      enable: true
+    button:
+      enable: true
+      name: "Resume"
+      url: "/resume.pdf"
+      download: true
+      newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: https://github.com/yourusername
+        - icon: fab fa-linkedin
+          url: https://linkedin.com/in/yourprofile
+        - icon: fab fa-twitter
+          url: https://twitter.com/yourusername
+        - icon: fas fa-blog
+          url: /blogs
+
+  # About Section
+  about:
+    enable: true
+    title: "About Me"
+    image: "/images/profile.png"
+    content: |-
+      I am a cybersecurity professional with [X] years of experience across multiple security domains. My expertise spans Governance, Risk & Compliance (GRC), Security Engineering, Offensive Security, and SOC Operations.
+
+      I'm passionate about building secure systems, automating security processes, and helping organizations improve their security posture. When I'm not hunting vulnerabilities or building security tools, you'll find me traveling, capturing photos, or spending time with my pets.
+
+      **Replace this with your own story! Talk about:**
+      - Your cybersecurity journey and specializations
+      - What drives your passion for security
+      - Your unique perspective or approach
+      - Personal interests that make you human
+    skills:
+      enable: true
+      title: "Security Tools & Technologies I Work With:"
+      items:
+        # Offensive Security Tools
+        - "Burp Suite"
+        - "Metasploit"
+        - "Nmap"
+        - "Wireshark"
+        # Defensive/SOC Tools
+        - "Splunk"
+        - "ELK Stack"
+        - "Sentinel"
+        - "CrowdStrike"
+        # Cloud & Infrastructure
+        - "AWS Security"
+        - "Azure Security"
+        - "Kubernetes"
+        - "Terraform"
+        # Programming & Scripting
+        - "Python"
+        - "PowerShell"
+        - "Bash"
+        - "Go"
+        # GRC & Compliance
+        - "NIST Framework"
+        - "ISO 27001"
+        - "SOC 2"
+        - "Risk Assessment"
+
+  # Experience Section
+  experience:
+    enable: true
+    items:
+      - company: "Tech Company Inc."
+        companyUrl: "https://example.com"
+        jobs:
+          - name: "Senior Security Engineer"
+            date: "Jan 2023 - Present"
+            content: |-
+              Leading security engineering initiatives and building security automation tools.
+
+              **Key Responsibilities:**
+              - Architected and deployed cloud-native security monitoring solutions using AWS GuardDuty and Security Hub
+              - Developed Python-based automation framework that reduced incident response time by 60%
+              - Led security architecture reviews for microservices infrastructure
+              - Mentored junior security engineers on secure coding practices
+
+              **Technologies:** Python, AWS, Kubernetes, Terraform, Docker, GitLab CI/CD
+            featuredItems:
+              fontAwesomeIcons:
+                - icon: fab fa-python
+                  url: https://www.python.org/
+                  tooltip: Python for security automation
+                - icon: fab fa-aws
+                  url: https://aws.amazon.com/
+                  tooltip: AWS Security Services
+                - icon: fab fa-docker
+                  url: https://www.docker.com/
+                  tooltip: Container Security
+
+      - company: "Financial Services Corp"
+        companyUrl: "https://example.com"
+        jobs:
+          - name: "GRC Analyst"
+            date: "Jun 2021 - Dec 2022"
+            content: |-
+              Managed governance, risk, and compliance programs for a Fortune 500 financial institution.
+
+              **Key Achievements:**
+              - Successfully led SOC 2 Type II audit preparation and achieved certification
+              - Developed automated risk assessment framework reducing assessment time by 50%
+              - Implemented vendor risk management program for 200+ third-party vendors
+              - Created security awareness training program with 95% completion rate
+
+              **Frameworks:** NIST CSF, ISO 27001, SOC 2, PCI DSS
+
+          - name: "Security Analyst"
+            date: "Mar 2020 - May 2021"
+            content: |-
+              Provided security monitoring, incident response, and threat analysis.
+
+              **Responsibilities:**
+              - Monitored SIEM alerts and investigated security incidents
+              - Conducted threat hunting exercises to identify advanced persistent threats
+              - Developed custom detection rules for Splunk
+              - Participated in incident response and forensics activities
+
+      - company: "Cybersecurity Consulting Firm"
+        companyUrl: "https://example.com"
+        jobs:
+          - name: "Penetration Tester"
+            date: "Jan 2018 - Feb 2020"
+            content: |-
+              Performed security assessments and penetration testing for clients across various industries.
+
+              **Notable Projects:**
+              - Conducted web application penetration tests for 50+ client applications
+              - Performed network penetration testing and red team exercises
+              - Discovered and reported critical vulnerabilities including authentication bypasses and RCE
+              - Delivered detailed security assessment reports with remediation guidance
+
+              **Tools:** Burp Suite, Metasploit, Nmap, Custom Python scripts
+
+  # Education Section
+  education:
+    enable: true
+    items:
+      - title: "Bachelor of Science in Cybersecurity"
+        school:
+          name: "University Name"
+          url: "https://example.edu"
+        date: "2014 - 2018"
+        GPA: "3.8 out of 4.0"
+        content: |-
+          **Relevant Coursework:**
+          - Network Security
+          - Cryptography
+          - Secure Software Development
+          - Digital Forensics
+          - Ethical Hacking
+
+          **Research:**
+          - Published research paper on "Machine Learning for Intrusion Detection Systems"
+          - Capstone project: Built automated vulnerability scanner for web applications
+
+          **Extracurricular:**
+          - President of Cybersecurity Club
+          - National Cyber League competitor (Top 10% nationally)
+          - CTF team member - multiple competition wins
+        featuredLink:
+          enable: true
+          name: "Research Paper"
+          url: "https://example.com/paper.pdf"
+
+      - title: "Security Certifications"
+        school:
+          name: "Professional Certifications"
+          url: "#"
+        date: "2018 - Present"
+        content: |-
+          - **OSCP** (Offensive Security Certified Professional) - 2022
+          - **CISSP** (Certified Information Systems Security Professional) - 2021
+          - **CEH** (Certified Ethical Hacker) - 2020
+          - **Security+** (CompTIA Security+) - 2018
+          - **AWS Security Specialty** - 2023
+          - **GIAC GPEN** (Penetration Tester) - 2021
+
+  # Achievements Section
+  achievements:
+    enable: true
+    items:
+      - title: "DEF CON CTF Finalist"
+        content: "Competed in DEF CON 30 CTF finals with team. Ranked in top 20 globally."
+        url: "https://defcon.org/html/links/dc-ctf.html"
+        image: /images/achievements/defcon.png
+
+      - title: "CVE Discovery - CVE-2023-XXXXX"
+        content: "Discovered and responsibly disclosed critical authentication bypass vulnerability in popular open-source project. Awarded $5,000 bounty."
+        url: "https://cve.mitre.org/"
+        image: /images/achievements/cve.png
+
+      - title: "BSides Conference Speaker"
+        content: "Presented 'Automating Security with Python' at BSides Las Vegas 2023. Attended by 200+ security professionals."
+        url: "https://bsideslv.org/"
+        image: /images/achievements/bsides.png
+
+      - title: "HackerOne Top 100 Researcher"
+        content: "Ranked in top 100 security researchers on HackerOne platform. Reported 50+ vulnerabilities across various bug bounty programs."
+        url: "https://hackerone.com/"
+        image: /images/achievements/h1.png
+
+      - title: "Published Security Research"
+        content: "Co-authored research paper on 'Advanced Threat Detection using Machine Learning' published in IEEE Security & Privacy."
+        url: "https://example.com/paper"
+
+      - title: "SOC 2 Certification Achievement"
+        content: "Led organization through first SOC 2 Type II audit with zero findings. Completed in record 6-month timeline."
+
+  # Projects Section
+  projects:
+    enable: true
+    items:
+      # GRC Projects
+      - title: "Automated Risk Assessment Framework"
+        content: "Python-based framework for automated security risk assessments across cloud infrastructure. Integrates with AWS, Azure, and GCP to identify misconfigurations and compliance violations against NIST, ISO 27001, and SOC 2 frameworks."
+        image: /images/projects/risk-framework.png
+        featured:
+          name: "GitHub"
+          link: https://github.com/yourusername/risk-framework
+        badges:
+          - "Python"
+          - "AWS"
+          - "NIST"
+          - "Compliance"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/yourusername/risk-framework
+          - icon: fas fa-book
+            url: /blogs/building-risk-framework
+
+      - title: "GRC Policy Management System"
+        content: "Web-based platform for managing security policies, procedures, and evidence collection for compliance audits. Built with Django and PostgreSQL. Supports version control, approval workflows, and automated reminders."
+        image: /images/projects/policy-mgmt.png
+        badges:
+          - "Django"
+          - "PostgreSQL"
+          - "Docker"
+          - "SOC 2"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/yourusername/policy-mgmt
+
+      # Security Engineering Projects
+      - title: "SIEM Automation Toolkit"
+        content: "Collection of Python scripts and playbooks for automating common SIEM operations in Splunk. Includes automatic alert enrichment, threat intelligence integration, and response orchestration."
+        image: /images/projects/siem-automation.png
+        featured:
+          name: "Demo"
+          link: https://example.com/demo
+        badges:
+          - "Python"
+          - "Splunk"
+          - "SOAR"
+          - "Automation"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/yourusername/siem-automation
+          - icon: fas fa-blog
+            url: /blogs/siem-automation-guide
+
+      - title: "Cloud Security Pipeline"
+        content: "CI/CD security integration for Kubernetes deployments. Performs container scanning, secrets detection, IaC security analysis, and policy enforcement. Built with Python and integrated with GitLab CI."
+        image: /images/projects/security-pipeline.png
+        badges:
+          - "Kubernetes"
+          - "Docker"
+          - "Python"
+          - "GitLab CI"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/yourusername/security-pipeline
+
+      # Offensive Security Projects
+      - title: "Web Application Security Scanner"
+        content: "Custom web application vulnerability scanner focused on detecting authentication and authorization flaws. Includes modules for SQL injection, XSS, CSRF, and business logic vulnerabilities."
+        image: /images/projects/webapp-scanner.png
+        badges:
+          - "Python"
+          - "OWASP"
+          - "Security Testing"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/yourusername/webapp-scanner
+          - icon: fas fa-book
+            url: /blogs/building-webapp-scanner
+
+      - title: "Active Directory Attack Framework"
+        content: "PowerShell and Python toolkit for Active Directory security testing. Implements common attack techniques including Kerberoasting, pass-the-hash, and privilege escalation for penetration testing engagements."
+        image: /images/projects/ad-framework.png
+        badges:
+          - "PowerShell"
+          - "Python"
+          - "Active Directory"
+          - "Red Team"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/yourusername/ad-framework
+
+      - title: "CTF Writeup Collection"
+        content: "Comprehensive collection of writeups from 50+ CTF competitions including Hack The Box, TryHackMe, and major CTF events. Detailed explanations of exploitation techniques and methodology."
+        image: /images/projects/ctf-writeups.png
+        featured:
+          name: "View Writeups"
+          link: /blogs/tags/ctf
+        badges:
+          - "CTF"
+          - "Pentesting"
+          - "Writeups"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/yourusername/ctf-writeups
+          - icon: fas fa-blog
+            url: /blogs/tags/ctf
+
+      # SOC/Defensive Projects
+      - title: "Threat Hunting Playbooks"
+        content: "Collection of threat hunting playbooks and detection rules for identifying advanced persistent threats. Includes Sigma rules, Splunk queries, and investigation procedures."
+        image: /images/projects/threat-hunting.png
+        badges:
+          - "Threat Hunting"
+          - "Sigma Rules"
+          - "Splunk"
+          - "Blue Team"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/yourusername/threat-hunting
+
+      - title: "Incident Response Automation"
+        content: "Automated incident response workflows using SOAR platform. Integrates with EDR, firewall, and SIEM for automatic containment and investigation of security incidents."
+        image: /images/projects/ir-automation.png
+        badges:
+          - "Python"
+          - "SOAR"
+          - "Incident Response"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/yourusername/ir-automation
+
+      # Personal/Mixed Projects
+      - title: "Security Homelab"
+        content: "Documented setup of my personal cybersecurity homelab for practicing defensive and offensive security. Includes Active Directory, SIEM, vulnerable machines, and attack infrastructure. Full infrastructure-as-code setup."
+        image: /images/projects/homelab.png
+        badges:
+          - "Homelab"
+          - "Proxmox"
+          - "Active Directory"
+          - "pfSense"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/yourusername/security-homelab
+          - icon: fas fa-book
+            url: /blogs/security-homelab-guide
+
+      - title: "Security Blog & Portfolio"
+        content: "This portfolio website! Built with Hugo and the hugo-profile theme. Showcases my projects, writeups, and security research. Fully automated deployment with Netlify."
+        image: /images/projects/portfolio.png
+        featured:
+          name: "Template"
+          link: https://github.com/yourusername/hugo-cybersec-portfolio
+        badges:
+          - "Hugo"
+          - "Netlify"
+          - "Portfolio"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/yourusername/hugo-cybersec-portfolio
+
+  # Contact Section
+  contact:
+    enable: true
+    title: "Get In Touch"
+    content: "I'm always open to discussing cybersecurity opportunities, collaboration on security research, or just chatting about security topics. Feel free to reach out!"
+    btnName: "Email Me"
+    btnLink: "mailto:your.email@example.com"
+    # Alternatively, use FormSpree for contact form
+    # formspree:
+    #   enable: true
+    #   formId: "your-formspree-id"
+
+  footer:
+    recentPosts:
+      path: "blogs"
+      count: 3
+      title: "Recent Blog Posts"
+      enable: true
+      disableFeaturedImage: false
+    socialNetworks:
+      github: https://github.com/yourusername
+      linkedin: https://linkedin.com/in/yourprofile
+      twitter: https://twitter.com/yourusername
+
+  # List pages like blogs and posts
+  listPages:
+    disableFeaturedImage: false
+
+  # Single pages
+  singlePages:
+    socialShare: true
+    readTime:
+      enable: true
+      content: "min read"
+    scrollprogress:
+      enable: true
+    tags:
+      openInNewTab: true
+
+  # For translations (optional)
+  # terms:
+  #   read: "Read"
+  #   toc: "Table Of Contents"
+  #   copyright: "All rights reserved"
+  #   pageNotFound: "Page not found"
+  #   emailText: "Check out this site"
+
+  # datesFormat:
+  #   article: "Jan 2, 2006"
+  #   articleList: "Jan 2, 2006"
+  #   articleRecent: "Jan 2, 2006"
