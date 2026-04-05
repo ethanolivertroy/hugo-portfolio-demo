@@ -16,15 +16,32 @@ A ready-to-deploy portfolio template built with [Hugo](https://gohugo.io/) and t
 
 ## Quick Start
 
-### Option A: Use This Template (Recommended)
+### Option A: Use a Coding Agent (Recommended)
+
+The fastest way to make this your own is to fill out a spec and let an AI coding agent do the rest. This works with [Claude Code](https://docs.anthropic.com/en/docs/claude-code), GitHub Copilot, Cursor, Windsurf, or any agent that can read files and edit code.
 
 1. Click **"Use this template"** > **"Create a new repository"** at the top of this page
+2. Clone your new repo: `git clone --recursive https://github.com/YOUR_USERNAME/your-repo.git`
+3. Open `PORTFOLIO_SPEC.md` and fill in your information (name, experience, projects, certs, etc.). Rough notes and bullet points are fine. You can even paste your resume.
+4. Open a terminal in the repo and tell your agent:
+
+   ```
+   Read PORTFOLIO_SPEC.md and customize this portfolio site for me.
+   ```
+
+5. The agent reads your spec, updates `hugo.yaml`, creates blog posts, and sets up deployment. Review what it did, push, and your site is live.
+
+The repo includes a `CLAUDE.md` that teaches agents how the site works, so they know which files to edit and how the config is structured.
+
+### Option B: Manual Setup
+
+1. Click **"Use this template"** > **"Create a new repository"**
 2. Name your repo (e.g., `my-portfolio` or `username.github.io`)
 3. In your new repo, go to **Settings** > **Pages** > set Source to **GitHub Actions**
 4. Edit `hugo.yaml` with your information (name, bio, experience, projects, social links)
 5. Push your changes. The site deploys automatically.
 
-### Option B: Fork and Clone
+### Option C: Fork and Clone
 
 ```bash
 # Fork this repo first, then:
@@ -101,8 +118,53 @@ Import the repo at [vercel.com/new](https://vercel.com/new). Set the framework t
 ├── static/images/               # Images and assets
 ├── themes/hugo-profile/         # Theme (git submodule)
 ├── hugo.yaml                    # All site configuration
+├── PORTFOLIO_SPEC.md            # Fill this out, hand it to an AI agent
+├── CLAUDE.md                    # Agent instructions (how to customize this site)
 └── README.md
 ```
+
+## Using AI Coding Agents
+
+This repo is designed to work well with AI coding agents. Here's how the pieces fit together:
+
+| File | Purpose |
+|---|---|
+| `PORTFOLIO_SPEC.md` | You fill this out with your career info. The agent reads it. |
+| `CLAUDE.md` | Tells agents how the site works, what files to edit, and how the config is structured. |
+| `hugo.yaml` | The agent updates this based on your spec. This is where all homepage content lives. |
+| `content/blogs/` | The agent creates blog posts here based on your spec. |
+
+### Workflow
+
+```
+Fill out PORTFOLIO_SPEC.md
+        │
+        ▼
+Tell your agent: "Read PORTFOLIO_SPEC.md and customize this site for me"
+        │
+        ▼
+Agent updates hugo.yaml, creates blog posts, sets baseURL
+        │
+        ▼
+Agent runs `hugo server` to verify the build
+        │
+        ▼
+You review, push to GitHub, site deploys automatically
+```
+
+### Tips
+
+- **Start rough.** Your spec doesn't need to be polished. Bullet points, sentence fragments, even a pasted resume work. The agent will structure it.
+- **Iterate.** After the first pass, tell the agent what to change: "make the about section shorter," "add another project," "write a blog post about X."
+- **Ask for help.** The agent can help you write your bio, suggest project descriptions, draft blog posts, or set up a custom domain.
+- **Preview first.** Always have the agent run `hugo server` before you push so you can check the result.
+
+### Compatible Agents
+
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (reads `CLAUDE.md` natively)
+- GitHub Copilot (workspace mode)
+- Cursor, Windsurf, Cline, Aider
+- Any agent that can read files and edit code
 
 ## Credits
 
