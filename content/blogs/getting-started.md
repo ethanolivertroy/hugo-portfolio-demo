@@ -3,7 +3,7 @@ title: "Welcome to Your Security Portfolio"
 date: 2025-01-01
 draft: false
 tags: ["Hugo", "Portfolio", "Getting Started"]
-image: /images/post.jpg
+image: images/post.png
 ---
 
 Congratulations on setting up your cybersecurity portfolio! This is a starter post to help you get familiar with the template. Feel free to delete it once you've added your own content.
@@ -35,7 +35,7 @@ title: "Your Post Title"
 date: 2025-01-15
 draft: false
 tags: ["Security", "Cloud"]
-image: /images/post.jpg
+image: images/post.png
 ---
 ```
 

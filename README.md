@@ -71,9 +71,62 @@ Everything lives in `hugo.yaml`. Open it and replace the placeholder content:
 
 Replace the placeholder images in `static/images/`:
 
-- `me.png` - Your profile photo (used in About section)
-- `hero.svg` - Hero section graphic
-- `projects/` - Project screenshots or thumbnails
+- `me.png` — Your profile photo (used in About section, displayed as a circle)
+- `hero.png` — Hero section graphic (square, ~800x800)
+- `projects/` — Project screenshots or thumbnails (landscape, ~1200x675)
+- `post.png` — Default blog post featured image
+
+#### Generate Custom Images with AI (Nano Banana Pro)
+
+This repo includes `generate_images.py`, a script that uses Google's **Nano Banana Pro** (Gemini 3 Pro Image) to generate polished, cybersecurity-themed images for every slot in the portfolio. You can customize the prompts to match your personal brand.
+
+**Setup:**
+
+```bash
+# 1. Get a free API key at https://aistudio.google.com/apikey
+# 2. Install dependencies (if not already installed)
+pip install google-genai Pillow
+
+# 3. Set your API key
+export GEMINI_API_KEY="your-key-here"
+```
+
+**Usage:**
+
+```bash
+# Preview what will be generated (no API calls)
+python3 generate_images.py --dry-run
+
+# Generate all 7 images (~90 seconds)
+python3 generate_images.py
+
+# Regenerate a single image
+python3 generate_images.py --only hero
+python3 generate_images.py --only avatar
+python3 generate_images.py --only ctf
+```
+
+**Customize prompts:** Open `generate_images.py` and edit the `prompt` field in `IMAGE_SPECS` for each image. Tips for good prompts:
+
+- Be specific about style: "isometric 3D", "flat design", "realistic screenshot", "infographic"
+- Specify colors: "dark navy background with teal and cyan accents"
+- Say "no text" or "no readable text" to avoid garbled lettering
+- Include "professional portfolio quality" to bias toward polished output
+- For avatars, use "stylized illustration" to avoid content policy blocks on photorealistic faces
+
+**Available image slots:**
+
+| Name | File | Description |
+|---|---|---|
+| `hero` | `static/images/hero.png` | Landing section graphic (1:1) |
+| `avatar` | `static/images/me.png` | Profile photo / avatar (1:1, circular crop) |
+| `cloud-scanner` | `static/images/projects/profile.png` | Project 1 card image (16:9) |
+| `compliance` | `static/images/projects/profile2.png` | Project 2 card image (16:9) |
+| `ctf` | `static/images/projects/converter.png` | Project 3 card image (16:9) |
+| `blog-welcome` | `static/images/post.png` | Blog featured image (16:9) |
+| `blog-homelab` | `static/images/post-homelab.png` | Blog featured image (16:9) |
+
+Originals are automatically backed up to `static/images/backup/` before overwriting.
 
 ### Blog Posts
 

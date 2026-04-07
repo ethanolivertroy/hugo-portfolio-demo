@@ -24,6 +24,7 @@ hugo --gc --minify       # Production build
 - Don't edit anything inside `themes/`. Override by creating files at the site root level.
 - Deployed via GitHub Pages using `.github/workflows/hugo.yml`.
 - After making changes, run `hugo server` to verify the build works before committing.
+- **Image paths must NOT start with `/`.** Use `images/hero.png` not `/images/hero.png`. The layout overrides pipe paths through Hugo's `relURL` filter, which only prepends the `baseURL` path for relative paths. Paths starting with `/` are treated as absolute and bypass `relURL`.
 
 ## Customization Workflow
 

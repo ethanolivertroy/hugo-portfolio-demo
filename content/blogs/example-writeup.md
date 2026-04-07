@@ -3,7 +3,7 @@ title: "Setting Up a Home Lab for Security Testing"
 date: 2025-01-02
 draft: false
 tags: ["Home Lab", "Security", "Virtualization", "Learning"]
-image: /images/post.jpg
+image: images/post-homelab.png
 ---
 
 A home lab is one of the best investments you can make in your cybersecurity career. It gives you a safe environment to practice offensive techniques, test defensive tools, and break things without consequences.
